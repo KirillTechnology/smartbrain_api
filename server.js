@@ -8,6 +8,7 @@ const signin = require('./controllers/signin');
 const profile = require('./controllers/profile');
 const image = require('./controllers/image');
 
+const PORT = process.env.PORT;
 
 const app = express();
 
@@ -33,4 +34,5 @@ app.put('/image', (req, res) => { image.handleImage(req, res, db) })
 app.post('/signin', (req, res) => { signin.handleSignin(req, res, db, bcrypt) })
 app.post('/register', (req, res) => { register.handleRegister(req, res, db, bcrypt) })
 
-app.listen(3001, () => { console.log('Server running. Port: 3001') });
+
+app.listen(PORT || 3001, () => { console.log(`Server running. Port: ${PORT}`) });
