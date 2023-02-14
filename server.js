@@ -15,13 +15,24 @@ const app = express();
 const db = knex({
     client: 'pg',
     connection: {
-        host: '127.0.0.1',
+        host: '@dpg-cflgt0pgp3ju5h43d4u0-a',
         port: 5432,
-        user: 'kirillsemenov',
-        password: '',
-        database: 'smart_brain'
+        user: 'smartbrain_user',
+        password: '3VvVS3zBDmB9VSEWSFDggbHQuJ8i3xL7',
+        database: 'smartbrain_b305'
     }
 });
+
+// const db = knex({
+//     client: 'pg',
+//     connection: {
+//         host: '127.0.0.1',
+//         port: 5432,
+//         user: 'kirillsemenov',
+//         password: '',
+//         database: 'smart_brain'
+//     }
+// });
 
 
 app.use(express.json());
@@ -35,4 +46,4 @@ app.post('/signin', (req, res) => { signin.handleSignin(req, res, db, bcrypt) })
 app.post('/register', (req, res) => { register.handleRegister(req, res, db, bcrypt) })
 
 
-app.listen(PORT || 3001, () => { console.log(`Server running. Port: ${PORT}`) });
+app.listen(PORT || 3001, () => { console.log(`Server running. Port: ${PORT || 3001}`) });
