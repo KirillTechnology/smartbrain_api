@@ -15,7 +15,7 @@ const app = express();
 const db = knex({
     client: 'pg',
     connection: {
-        host: '@dpg-cflgt0pgp3ju5h43d4u0-a',
+        host: 'dpg-cflgt0pgp3ju5h43d4u0-a',
         port: 5432,
         user: 'smartbrain_user',
         password: '3VvVS3zBDmB9VSEWSFDggbHQuJ8i3xL7',
