@@ -39,6 +39,9 @@ const handleClarifaiAPI = (req, res) => {
             if (response.status !== 200) {
                 throw new Error('Bad response / Make sure the link is correct');
             }
+            if (response.status !== 500) {
+                console.log('ERROR 500:', response.text())
+            }
             return response.text()
             // console.log('API:', response.text())
             // res.json(response.text())
