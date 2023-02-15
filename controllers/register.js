@@ -1,4 +1,4 @@
-const handleRegister = (req, res, db, bcrypt) => {
+export const handleRegister = (req, res, db, bcrypt) => {
     const { name, email, password } = req.body;
     if (!name || !email || !password) { return res.status(400).json('Empty value submitted') }
 
@@ -26,6 +26,6 @@ const handleRegister = (req, res, db, bcrypt) => {
     .catch(err => res.status(400).json('Unable to register'))
 }
 
-module.exports = {
-    handleRegister: handleRegister
-}
+// module.exports = {
+//     handleRegister: handleRegister
+// }

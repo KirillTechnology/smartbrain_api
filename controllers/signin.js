@@ -1,4 +1,4 @@
-const handleSignin = (req, res, db, bcrypt) => {
+export const handleSignin = (req, res, db, bcrypt) => {
     db
      .select('email','hash')
      .from('login')
@@ -19,6 +19,6 @@ const handleSignin = (req, res, db, bcrypt) => {
      .catch(err => res.status(400).json('Bad request'))
  }
 
- module.exports = {
-    handleSignin: handleSignin
- }
+//  module.exports = {
+//     handleSignin: handleSignin
+//  }

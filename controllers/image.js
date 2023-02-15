@@ -1,3 +1,5 @@
+import fetch from "node-fetch";
+
 // Clarifai API
 const USER_ID = 'kirilltechnology';
 const PAT = 'f869ca70889145759b928f2262e6e3ea'; // Your PAT (Personal Access Token) can be found in the portal under Authentification
@@ -39,9 +41,7 @@ const handleClarifaiAPI = (req, res) => {
             if (response.status !== 200) {
                 throw new Error('Bad response / Make sure the link is correct');
             }
-            if (response.status !== 500) {
-                console.log('ERROR 500:', response.text())
-            }
+
             return response.text()
             // console.log('API:', response.text())
             // res.json(response.text())
@@ -60,8 +60,9 @@ const handleImage = (req, res, db) => {
         .then(score => res.json(score[0].score))
 }
 
+export { handleClarifaiAPI, handleImage };
 
-module.exports = {
-    handleImage,
-    handleClarifaiAPI
-}
+// module.exports = {
+//     handleImage,
+//     handleClarifaiAPI
+// }
